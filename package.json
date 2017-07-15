@@ -1,0 +1,22 @@
+{
+  "name": "chrome-interface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chrome-launcher": "^0.3.1",
+    "chrome-remote-interface": "^0.24.2"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devsnek/node-chrome-interface.git"
+  },
+  "author": "snek <me@gus.host>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devsnek/node-chrome-interface/issues"
+  },
+  "homepage": "https://github.com/devsnek/node-chrome-interface#readme"
+}

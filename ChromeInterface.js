@@ -21,9 +21,9 @@ class ChromeInterface extends EventEmitter {
       .then(r => Buffer.from(r.data, 'base64'));
   }
 
-  close() {
-    this.protocol.close();
-    this.chrome.kill();
+  async close() {
+    await this.protocol.close();
+    await this.chrome.kill();
   }
 }
 

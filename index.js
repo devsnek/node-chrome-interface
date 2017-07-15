@@ -16,5 +16,4 @@ async function run(options) {
   return page;
 }
 
-
 module.exports = run;
