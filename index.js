@@ -4,7 +4,7 @@ const ChromeInterface = require('./ChromeInterface');
 
 async function run(options) {
   options.chromeFlags = [`--window-size=${options.width || 800},${options.height || 600}`];
-  if (options.headless) options.chromeFlags.push('--headless', '--disable-gpu');
+  if (options.headless !== false) options.chromeFlags.push('--headless', '--disable-gpu');
   options.logLevel = 'silent';
 
   const chrome = await launch(options);

@@ -16,8 +16,9 @@ class ChromeInterface extends EventEmitter {
     return this.protocol.Page.navigate({ url });
   }
 
-  screenshot() {
-    return this.protocol.Page.captureScreenshot()
+  screenshot(options = {}) {
+    if (process.platform === 'darwin') options.fromSurface = true;
+    return this.protocol.Page.captureScreenshot(options)
       .then(r => Buffer.from(r.data, 'base64'));
   }
 
