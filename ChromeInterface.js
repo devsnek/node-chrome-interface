@@ -11,8 +11,7 @@ class ChromeInterface extends EventEmitter {
   }
 
   load(str) {
-    const url = /^(https?|file):\/\//.test(str) ? str :
-      `data:text/html;base64,${Buffer.from(str).toString('base64')}`;
+    const url = /^(https?|file):\/\//.test(str) ? str : `data:text/html,${str}`;
     return this.protocol.Page.navigate({ url });
   }
 
