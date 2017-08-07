@@ -8,6 +8,9 @@ class ChromeInterface extends EventEmitter {
     protocol.Network.requestWillBeSent(({ request }) => {
       this.emit('request', request);
     });
+    protocol.Console.messageAdded(message => {
+      this.emit('console', message);
+    });
   }
 
   load(str) {

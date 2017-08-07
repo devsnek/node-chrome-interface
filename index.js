@@ -10,9 +10,9 @@ async function run(options) {
   const chrome = await launch(options);
   const protocol = await cdp({ port: chrome.port });
 
-  const { Network, Page } = protocol;
+  const { Network, Page, Console } = protocol;
   const page = new ChromeInterface({ protocol, chrome });
-  await Promise.all([Network.enable(), Page.enable()]);
+  await Promise.all([Network.enable(), Page.enable(), Console.enable()]);
   return page;
 }
 
