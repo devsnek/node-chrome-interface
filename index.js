@@ -2,7 +2,7 @@ const cdp = require('chrome-remote-interface');
 const { launch } = require('chrome-launcher');
 const ChromeInterface = require('./ChromeInterface');
 
-async function run(options) {
+async function run(options = {}) {
   options.chromeFlags = [`--window-size=${options.width || 800},${options.height || 600}`];
   if (options.headless !== false) options.chromeFlags.push('--headless', '--disable-gpu');
   options.logLevel = 'silent';
